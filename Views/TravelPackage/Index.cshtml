@@ -51,12 +51,12 @@
                                     <div class="d-flex justify-content-start align-items-center">
                                         <a class="btn btn_custom_info" href="@Url.Action("Show", "TravelPackage", new { id = @travel.Id })"><i class="fas fa-info-circle"></i></a>
                                         <a class="btn btn_custom_edit" href="@Url.Action("Update", "TravelPackage", new { id = @travel.Id })"><i class="fas fa-edit"></i></a>
-                                        @*<form asp-controller="TravelPackage" asp-action="Delete" asp-route-id="@travel.Id" method="post">
+                                        <form asp-controller="TravelPackage" asp-action="Delete" asp-route-id="@travel.Id" method="post">
                                             @Html.AntiForgeryToken()
                                             <button type="submit" class="btn btn_custom_delete">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-                                        </form>*@
+                                        </form>
                                     </div>
                                 </td>
                             </tr>

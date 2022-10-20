@@ -23,7 +23,20 @@ public class TravelPackageController : Controller
 
     public IActionResult Show(int id)
     {
-        return View("Index");
+        using (TravelContext context = new TravelContext())
+        {
+            TravelPackage travelFounded = context.Travels
+                .Where(travelPackage => travelPackage.Id == id).First();
+            
+            if (travelFounded == null)
+            {
+                return NotFound($"Il viaggio con id {id} non è stato trovato");
+            }
+            else
+            {
+                return View("Show", travelFounded);
+            }
+        }
     }
     
     [HttpGet]
@@ -137,11 +150,23 @@ public class TravelPackageController : Controller
             return RedirectToAction("Index");
         }
     }
-/*
+    
+    
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(int id)
     {
-        
-    }*/
+        using (TravelContext context = new TravelContext())
+        {
+            TravelPackage travel =  context.Travels
+                .Where(travelPackage => travelPackage.Id == id).FirstOrDefault();
+            if (travel == null)
+            {
+                return NotFound("Non trovato");
+            }
+            context.Travels.Remove(travel);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }   
+    }
 }
