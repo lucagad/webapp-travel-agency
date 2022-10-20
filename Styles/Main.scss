@@ -19,14 +19,8 @@ main {
 */
 
 .btn_custom{
-    background-color: #00D7C7;
-    border-color:#00D7C7;
-    color: white;
-}
-
-.btn_custom_buy{
     background-color: $button-primary;
-    border-color: $button-primary;
+    border-color:$button-primary;
     color: white;
 }
 

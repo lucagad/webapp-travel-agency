@@ -25,6 +25,9 @@ public class TravelPackage
     
     public int Days { get; set; }
     
+    public DateTime StartDay { get; set; }
+    
+    public DateTime EndDay { get; set; }
     public int Destinations { get; set; }
   
     public TravelPackage()
@@ -32,10 +35,11 @@ public class TravelPackage
         
     }
     
-    public TravelPackage(string title, string description, string? img , double price, int days ,int destinations)
+    public TravelPackage(string title, string description, string? img , double price, DateTime start, DateTime end ,int destinations)
     {
         Title = title;
         Description = description;
+        
         if (img != null)
         {
             ImgUrl = img;
@@ -45,7 +49,9 @@ public class TravelPackage
             ImgUrl = "/img/placeholder.jpg";
         }
         Price = price;
-        Days = days;
+        StartDay = start;
+        EndDay = end;
+        Days = 0;
         Destinations = destinations;
     }
 }

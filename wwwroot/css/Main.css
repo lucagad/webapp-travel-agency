@@ -21,12 +21,6 @@ main {
 // BOTTONI CRUD
 */
 .btn_custom {
-  background-color: #00D7C7;
-  border-color: #00D7C7;
-  color: white;
-}
-
-.btn_custom_buy {
   background-color: #ff4658;
   border-color: #ff4658;
   color: white;

@@ -21,17 +21,18 @@ public class TravelPackageController : Controller
         return View("Index", travelPackages);
     }
 
-    /*public IActionResult Show(int id)
+    public IActionResult Show(int id)
     {
-        
+        return View("Index");
     }
     
     [HttpGet]
     public IActionResult Create()
     {
-        
+        return View("Create");
     }
-
+    
+    /*
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create(TravelPackage formData)

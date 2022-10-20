@@ -5,12 +5,73 @@ body {
   height: 100vh;
 }
 
-.footer_personal {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
+.wr-footer {
   background-color: #1a1a1a;
-  color: #efefef;
+  /*
+  background-image: url("https://cdn.weroad.io/common/images/default/bg-footer.jpg");
+  */
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
+.wr-footer .footer-bg,
+.wr-footer .footer-bg img {
+  background-size: cover;
+  background-position: 50%;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  width: 100%;
+}
+.wr-footer .container {
+  position: relative;
+  padding: 20px 15px 0;
+}
+.wr-footer .container .footer-top {
+  text-align: left;
+}
+.wr-footer .container .collapse-mobile-footer {
+  overflow: hidden;
+}
+.wr-footer .container .collapse-mobile-footer .footer-middle .footer-link {
+  text-decoration: none;
+  column-count: auto;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0;
+  font-size: 1em;
+  line-height: 1em;
+  padding-top: 0;
+  flex-wrap: wrap;
+}
+.wr-footer .container .collapse-mobile-footer .footer-middle .ul-main-menu {
+  list-style: none;
+  padding-top: 0.75em;
+  font-size: 14px;
+  line-height: 2em;
+  margin-top: 10px;
+  column-gap: 20px;
+}
+.wr-footer .container .collapse-mobile-footer .footer-middle .ul-main-menu .menu-item-label {
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.wr-footer .container .collapse-mobile-footer .footer-middle .ul-main-menu .sub-menu .sub-item-menu {
+  text-decoration: none;
+  color: #ff4658 !important;
+  display: block;
+  line-height: 1.4;
+  font-weight: 500;
+  font-size: 14px;
 }

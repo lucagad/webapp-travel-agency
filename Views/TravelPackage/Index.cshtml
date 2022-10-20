@@ -4,23 +4,20 @@
 @inject UserManager<IdentityUser> UserManager
 
 @{
-    ViewData["Title"] = "Homepage - ";
-    //Layout = null;
+    ViewData["Title"] = "Gestione Viaggi | ";
 }
 
 @model List<TravelPackage>;
 
 @* CONTROLLO ACCESSO EFFETTUATO *@
-@if (SignInManager.IsSignedIn(User))
-{
+@*@if (SignInManager.IsSignedIn(User))
+{*@
     <div class="container mt-4">
 
         <div class="card w-100">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5>Lista delle Pizze</h5>
-                @*
-                <a class="btn btn_custom_secondary" href="@Url.Action("Create", "TravelPackage")">+</a>
-                *@
+                <h5>Lista dei Viaggi</h5>
+                <a class="btn btn_custom" href="@Url.Action("Create", "TravelPackage")">+</a>
             </div>
 
             <div class="card-body mx-1 d-flex flex-column flex-md-row row">
@@ -50,8 +47,8 @@
                                 <td>@travel.Days</td>
                                 <td>
                                     <div class="d-flex justify-content-start align-items-center">
-                                        @*<a class="btn btn_custom_info" href="@Url.Action("Show", "TravelPackage", new { id = @travel.Id })"><i class="fas fa-info-circle"></i></a>
-                                        <a class="btn btn_custom_edit" href="@Url.Action("Update", "TravelPackage", new { id = @travel.Id })"><i class="fas fa-edit"></i></a>
+                                        <a class="btn btn_custom_info" href="@Url.Action("Show", "TravelPackage", new { id = @travel.Id })"><i class="fas fa-info-circle"></i></a>
+                                        @*<a class="btn btn_custom_edit" href="@Url.Action("Update", "TravelPackage", new { id = @travel.Id })"><i class="fas fa-edit"></i></a>
                                         <form asp-controller="TravelPackage" asp-action="Delete" asp-route-id="@travel.Id" method="post">
                                             @Html.AntiForgeryToken()
                                             <button type="submit" class="btn btn_custom_delete">
@@ -74,10 +71,10 @@
 
         </div>
     </div>
-}
-@* SE NEGATIVO MOSTRO ERRORE *@
+@*}
+$1$ SE NEGATIVO MOSTRO ERRORE #1#
 else
 {
     @Html.Partial("../Shared/Partials/_ErrorAuth")
     
-}
+}*@
