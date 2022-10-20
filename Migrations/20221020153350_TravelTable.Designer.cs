@@ -12,7 +12,7 @@ using webapp_travel_agency;
 namespace webapp_travel_agency.Migrations
 {
     [DbContext(typeof(TravelContext))]
-    [Migration("20221020134718_TravelTable")]
+    [Migration("20221020153350_TravelTable")]
     partial class TravelTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -245,7 +245,7 @@ namespace webapp_travel_agency.Migrations
                     b.Property<int>("Destinations")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EndDay")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImgUrl")
@@ -254,7 +254,7 @@ namespace webapp_travel_agency.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("StartDay")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")

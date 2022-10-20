@@ -59,8 +59,8 @@ namespace webapp_travel_agency.Migrations
                     ImgUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
                     Days = table.Column<int>(type: "int", nullable: false),
-                    StartDay = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDay = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Destinations = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

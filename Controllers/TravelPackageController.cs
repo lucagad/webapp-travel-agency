@@ -32,26 +32,112 @@ public class TravelPackageController : Controller
         return View("Create");
     }
     
-    /*
+    
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create(TravelPackage formData)
     {
-        
+        if (!ModelState.IsValid)
+        {
+            return View("Create");
+        }
+
+        using (TravelContext context = new TravelContext())
+        {
+            TravelPackage travelToCreate = new TravelPackage();
+            
+            travelToCreate.Title = formData.Title;
+            travelToCreate.Description = formData.Description;
+            
+            if (formData.ImgUrl != null)
+            {
+                travelToCreate.ImgUrl = formData.ImgUrl;
+            }
+            else
+            {
+                travelToCreate.ImgUrl="/img/placeholder.jpg";
+            }
+            
+            travelToCreate.Price = formData.Price;
+            travelToCreate.StartDate = formData.StartDate;
+            travelToCreate.EndDate = formData.EndDate;
+
+            if (Convert.ToInt32((travelToCreate.EndDate - travelToCreate.StartDate).TotalDays) == 0)
+            {
+                travelToCreate.Days = 1;
+            }
+            else
+            {
+                travelToCreate.Days =
+                    Convert.ToInt32((travelToCreate.EndDate - travelToCreate.StartDate).TotalDays);
+            }
+            
+            context.Travels.Add(travelToCreate);
+            context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 
     [HttpGet]
     public IActionResult Update(int id)
     {
+        using (TravelContext context = new TravelContext())
+        {
+            TravelPackage travelSelected = context.Travels
+                .Where(travelPackage => travelPackage.Id == id).First();
+            
+            if (travelSelected == null)
+            {
+                return NotFound("Viaggio non trovato");
+            }
+            
+            return View (travelSelected);
+        }
         
     }
 
     [HttpPost]
     public IActionResult Update(int id, TravelPackage formData)
     {
-        
-    }
+        using (TravelContext context = new TravelContext())
+        {
+            TravelPackage travelSelected =  context.Travels
+                .Where(travelPackage => travelPackage.Id == id).FirstOrDefault();
 
+            travelSelected.Title = formData.Title;
+            travelSelected.Description = formData.Description;
+            
+            if (formData.ImgUrl != null)
+            {
+                travelSelected.ImgUrl = formData.ImgUrl;
+            }
+            else
+            {
+                travelSelected.ImgUrl="/img/placeholder.jpg";
+            }
+            
+            travelSelected.Price = formData.Price;
+            travelSelected.StartDate = formData.StartDate;
+            travelSelected.EndDate = formData.EndDate;
+            
+            if (Convert.ToInt32((travelSelected.EndDate - travelSelected.StartDate).TotalDays) == 0)
+            {
+                travelSelected.Days = 1;
+            }
+            else
+            {
+                travelSelected.Days =
+                    Convert.ToInt32((travelSelected.EndDate - travelSelected.StartDate).TotalDays);
+            }
+            
+            context.Travels.Update(travelSelected);
+
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+    }
+/*
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(int id)

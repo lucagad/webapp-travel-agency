@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using webapp_travel_agency.Validation;
 
 namespace webapp_travel_agency.Models;
 
@@ -25,9 +26,13 @@ public class TravelPackage
     
     public int Days { get; set; }
     
-    public DateTime StartDay { get; set; }
+    [Required(ErrorMessage = "Il campo è obbligatorio")]
+    [CheckDateGreaterToday]
+    public DateTime StartDate { get; set; }
     
-    public DateTime EndDay { get; set; }
+    [Required(ErrorMessage = "Il campo è obbligatorio")]
+    [CheckDateGreaterToday]
+    public DateTime EndDate { get; set; }
     public int Destinations { get; set; }
   
     public TravelPackage()
@@ -48,10 +53,11 @@ public class TravelPackage
         {
             ImgUrl = "/img/placeholder.jpg";
         }
+        
         Price = price;
-        StartDay = start;
-        EndDay = end;
-        Days = 0;
+        StartDate = start;
+        EndDate = end;
+        Days = Convert.ToInt32((EndDate - StartDate).TotalDays);
         Destinations = destinations;
     }
 }

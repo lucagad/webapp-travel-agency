@@ -243,7 +243,7 @@ namespace webapp_travel_agency.Migrations
                     b.Property<int>("Destinations")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EndDay")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImgUrl")
@@ -252,7 +252,7 @@ namespace webapp_travel_agency.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("StartDay")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")

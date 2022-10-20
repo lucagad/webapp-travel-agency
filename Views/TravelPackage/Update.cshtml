@@ -19,20 +19,19 @@
                 @* Singola scheda *@
                 <div class="card w-100">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <span class="font-weight-bold">Crea nuovo Viaggio</span>
+                        <span class="font-weight-bold">Modifica Viaggio selezionato</span>
                         <a class="btn btn_custom_secondary" asp-area="" asp-controller="TravelPackage" asp-action="Index">Torna all'elenco</a>
                     </div>
 
                     <div class="card-body d-flex flex-column flex-md-row row">
                         
-                        <form asp-controller="TravelPackage" asp-action="Create" method="post">
+                       <form asp-controller="TravelPackage" asp-action="Update" asp-route-id="@Model.Id" method="post">
                             @Html.AntiForgeryToken()
                             
                             @*{{-- Nome prodotto --}}*@
                             <div class="form-group">
                                 <label class="font-weight-bold" for="name">Titolo del Viaggio</label>
                                 <input type="text"
-                                       value=""
                                        class="form-control"
                                        asp-for="@Model.Title"
                                        id="name"
@@ -66,7 +65,6 @@
                             <div class="form-group">
                                 <label class="font-weight-bold" for="price">Prezzo del Viaggio</label>
                                 <input type="text"
-                                       value=""
                                        class="form-control"
                                        asp-for="@Model.Price"
                                        id="price"
@@ -98,7 +96,7 @@
                             </div>
                         
                             @*{{-- Submit --}}*@
-                            <button type="submit" class="btn btn_custom my-2">Crea</button>
+                            <button type="submit" class="btn btn_custom my-2">Modifica</button>
                         </form>
                     </div>
                 </div>
