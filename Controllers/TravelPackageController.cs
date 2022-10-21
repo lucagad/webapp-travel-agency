@@ -23,19 +23,21 @@ public class TravelPackageController : Controller
 
     public IActionResult Show(int id)
     {
-        using (TravelContext context = new TravelContext())
+        TravelMessages travelMessages = new TravelMessages();
+        
+        travelMessages.TravelPackage = new TravelContext().Travels
+            .Where(travelPackage => travelPackage.Id == id).First();
+        
+        travelMessages.Messages = new TravelContext().Messages
+            .Where(message => message.TravelPackageId == id).ToList();
+        
+        if (travelMessages.TravelPackage  == null)
         {
-            TravelPackage travelFounded = context.Travels
-                .Where(travelPackage => travelPackage.Id == id).First();
-            
-            if (travelFounded == null)
-            {
-                return NotFound($"Il viaggio con id {id} non è stato trovato");
-            }
-            else
-            {
-                return View("Show", travelFounded);
-            }
+            return NotFound($"Il viaggio con id {id} non è stato trovato");
+        }
+        else
+        {
+            return View("Show", travelMessages);
         }
     }
     
@@ -44,7 +46,6 @@ public class TravelPackageController : Controller
     {
         return View("Create");
     }
-    
     
     [HttpPost]
     [ValidateAntiForgeryToken]
@@ -150,7 +151,6 @@ public class TravelPackageController : Controller
             return RedirectToAction("Index");
         }
     }
-    
     
     [HttpPost]
     [ValidateAntiForgeryToken]
