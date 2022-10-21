@@ -8,7 +8,7 @@ body {
 
 main {
   overflow-y: scroll;
-  height: calc(100vh - 86px - 390px);
+  height: calc(100vh - 86px - 310px);
 }
 
 footer {

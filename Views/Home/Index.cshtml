@@ -11,7 +11,7 @@
         <div class="col-lg-6 py-2 mx-auto">
             <div class="relative px-1">
                 <div  class="wr-travel-search-bar flex-grow text-gray-500 ">
-                    <input class="js_search" type="text" placeholder="Cerca viaggi">
+                    <input class="js_search form-control" type="text" placeholder="Cerca viaggi">
                 </div>
             </div>
             
@@ -20,7 +20,7 @@
     </div>
 </section>
 
-<section class="container">
+<section class="container-fluid">
     <div id="travels-list" class="text-center row d-flex flex-wrap justify-content-center">
         
         <section id="loading" class="py-5 d-flex justify-content-center">
@@ -66,7 +66,7 @@
                 res.data.forEach(travel => {
                     console.log('Viaggio: ', travel);
                     document.querySelector("#travels-list").innerHTML += 
-                          `<div class="col-6 wr-banner h-auto relative text-white text-center d-flex flex-column justify-content-center align-items-center">
+                          `<div class="col-10 col-md-4 wr-banner h-auto relative text-white text-center d-flex flex-column justify-content-center align-items-center">
 
                                 <div class="wr-image wr-banner-image background">
                                     <picture class="block">
