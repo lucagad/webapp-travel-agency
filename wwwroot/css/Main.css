@@ -6,15 +6,54 @@ body {
 }
 
 main {
-  height: calc(100vh - 130px - 60px);
   overflow-y: auto;
 }
 
-.herobanner {
-  background-image: url("https://img.freepik.com/premium-photo/tasty-pepperoni-pizza-black-concrete-background_79782-103.jpg?w=2000");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.wr-banner {
+  min-height: 300px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  outline: none !important;
+  padding: 0;
+  border: 1px solid #fff;
+}
+.wr-banner .wr-banner-image img {
+  filter: blur(3px);
+}
+.wr-banner .wr-banner-image .background {
+  min-height: 300px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: "";
+  background-color: rgba(10, 10, 15, 0.25);
+}
+
+.wr-banner-text {
+  top: 20%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 10;
+  overflow-y: auto;
+}
+.wr-banner-text .price-text {
+  color: #ff4658;
+}
+.wr-banner-text .btn.white-outline {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.wr-banner-text .btn.white-outline:hover {
+  background-color: white;
+  border: 1px solid white;
+  color: #ff4658;
 }
 
 /*

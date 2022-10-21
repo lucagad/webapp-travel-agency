@@ -9,6 +9,7 @@
     
     <link rel="stylesheet" href="~/css/general.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/Header.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/HeroBanner.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/Main.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/Footer.css" asp-append-version="true"/>
     
@@ -22,11 +23,9 @@
     @Html.Partial("../Shared/Partials/_Header")
 </header>
 
-<div class="container-fluid mx-0 px-0 m-y-2">
-    <main role="container main" class="pb-3">
-        @RenderBody()
-    </main>
-</div>
+<main class="container-fluid m-0 p-0">
+    @RenderBody()
+</main>
 
 <footer class="border-top footer text-muted">
     @Html.Partial("../Shared/Partials/_Footer")
