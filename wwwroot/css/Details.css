@@ -7,7 +7,7 @@ body {
 
 .herobanner-details {
   height: 400px;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;

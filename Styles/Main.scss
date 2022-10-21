@@ -89,10 +89,6 @@ main {
 }
 
 
-/*
-// BOTTONI CRUD
-*/
-
 .btn_custom{
     background-color: $button-primary;
     border-color:$button-primary;
@@ -101,53 +97,4 @@ main {
 
 .btn_custom:hover{
     color: #4F126F;
-}
-
-.btn_custom_info,
-.btn_custom_edit,
-.btn_custom_delete{
-    margin: 2px;
-}
-
-.btn_custom_info {
-    background-color: #00D7C7;
-    border-color: #00D7C7;
-    color: white;
-}
-
-.btn_custom_info:hover{
-    background-color: whitesmoke;
-    border-color: #00D7C7;
-}
-
-.btn_custom_edit {
-    background-color: #FF9D22;
-    border-color: #FF9D22;
-    color: white;
-}
-
-.btn_custom_edit:hover{
-    background-color: whitesmoke;
-    border-color: #FF9D22;
-}
-
-.btn_custom_delete{
-    background-color: #e3332f;
-    border-color: #e3332f;
-    color: white;
-}
-
-.btn_custom_delete:hover{
-    background-color: whitesmoke;
-    border-color: #e3332f;
-}
-
-.btn_custom_secondary{
-    background-color: #4F126F;
-    border-color:#4F126F;
-    color: white;
-}
-
-.btn_custom_secondary:hover{
-    color: #00D7C7;
 }

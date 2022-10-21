@@ -23,4 +23,8 @@
       <_ContentIncludedByDefault Remove="Views\Shared\TravelPackage\Details.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Views\Shared\Partials\Backend" />
+    </ItemGroup>
+
 </Project>

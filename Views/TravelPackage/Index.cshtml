@@ -5,6 +5,7 @@
 
 @{
     ViewData["Title"] = "Gestione Viaggi | ";
+    Layout = "_Layout_Backend";
 }
 
 @model List<TravelPackage>;
@@ -45,8 +46,12 @@
                                 <td><img class="table-img-custom" src="@travel.ImgUrl" alt="@travel.Title"></td>
                                 <td>@travel.Title</td>
                                 <td>@travel.Price €</td>
-                                <td>@travel.StartDate</td>
-                                <td>@travel.EndDate</td>
+                                <td>
+                                    @travel.StartDate
+                                </td>
+                                <td>
+                                    @travel.EndDate
+                                </td>
                                 <td>
                                     <div class="d-flex justify-content-start align-items-center">
                                         <a class="btn btn_custom_info" href="@Url.Action("Show", "TravelPackage", new { id = @travel.Id })"><i class="fas fa-info-circle"></i></a>
@@ -80,3 +85,8 @@ else
     @Html.Partial("../Shared/Partials/_ErrorAuth")
     
 }*@
+<script type="text/javascript">
+    function formatDate(dateString) {
+        return new Date(dateString).toLocaleDateString();
+    }
+</script>
