@@ -11,6 +11,7 @@ main {
 
 .wr-banner {
   min-height: 300px;
+  max-width: 550px;
   margin: 0;
   position: relative;
   overflow: hidden;
@@ -33,6 +34,10 @@ main {
   background-color: rgba(10, 10, 15, 0.25);
 }
 
+.loading-text {
+  color: #ff4658;
+}
+
 .wr-banner-text {
   top: 20%;
   left: 0;
@@ -44,6 +49,14 @@ main {
 }
 .wr-banner-text .price-text {
   color: #ff4658;
+  position: absolute;
+  bottom: 55px;
+  right: 20px;
+}
+.wr-banner-text .btn-banner {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 .wr-banner-text .btn.white-outline {
   background-color: transparent;
@@ -54,6 +67,16 @@ main {
   background-color: white;
   border: 1px solid white;
   color: #ff4658;
+}
+.wr-banner-text .btn.primary-outline {
+  background-color: transparent;
+  border: 1px solid #ff4658;
+  color: #ff4658;
+}
+.wr-banner-text .btn.primary-outline:hover {
+  background-color: #ff4658;
+  border: 1px solid #ff4658;
+  color: white;
 }
 
 /*

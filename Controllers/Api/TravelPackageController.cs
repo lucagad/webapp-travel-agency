@@ -31,13 +31,13 @@ namespace webapp_travel_agency.Controllers.API
         
         //api/Pizza/GetByName
         [HttpGet()]
-        public IActionResult GetByName(string? title)
+        public IActionResult GetByTitle(string? title)
         {
             IQueryable<TravelPackage> travels;
 
             if(title != null){
                 
-                travels = _ctx.Travels.Where(travelPackage => travelPackage.Title.ToLower().Contains(title.ToLower()));
+                travels = _ctx.Travels.Where(travelPackage => travelPackage.Title.ToLower().Contains(title.ToLower()) || travelPackage.Description.ToLower().Contains(title.ToLower()));
             }
             else
             {

@@ -20,12 +20,12 @@
     </div>
 </section>
 
-<section class="pb-3 container">
-    <div id="travels-list" class="text-center row d-flex flex-wrap">
+<section class="container">
+    <div id="travels-list" class="text-center row d-flex flex-wrap justify-content-center">
         
-        <section id="loading" class="d-flex justify-content-center">
+        <section id="loading" class="py-5 d-flex justify-content-center">
             <div>
-                <p>Caricamento in corso ...</p>
+                <h2 class="loading-text">Caricamento in corso ...</h2>
             </div>
         </section>
        
@@ -47,12 +47,12 @@
         getTravelPackages(title);
     }
     
-    function getTravelPackages(name){
+    function getTravelPackages(title){
        
-        //axios.get('/api/post/get?name='+name).then( res => {
-        axios.get('/api/TravelPackage/GetByName',{
+        //axios.get('/api/TravelPackage/GetByTitle?title='+title).then( res => {
+        axios.get('/api/TravelPackage/GetByTitle',{
             params:{
-                name: name
+                title: title
             }
         }).then(res => {
             console.log('Chiamata OK', res);
@@ -74,14 +74,14 @@
                                     </picture>
                                 </div>
                     
-                                <div class="wr-banner-text">
-                                    <div class="container-text px-1 px-lg-2 z-20 relative">
-                                        <h2 class="font-display block leading-none m-0">${travel.title}</h2>
-                                        <div class="font-body max-w-400 text-lg leading-normal mt-1 mx-auto">${travel.description}</div>
-                                        <h4 class="font-body max-w-400 text-lg leading-normal mt-1 mx-auto price-text ">${travel.price} €</h4>
-                                        <div class="font-body max-w-400 text-lg leading-normal mt-1 mx-auto">Dal ${formatDate(travel.startDate)} al ${formatDate(travel.endDate)} </div>
+                                <div class="wr-banner-text relative">
+                                    <div class="container-text p-1 p-lg-2 z-20 position-relative">
+                                        <h2 class="font-display block m-0">${travel.title}</h2>
+                                        <div class="font-body max-w-400 text-lg mt-1 mx-auto">${travel.description}</div>
+                                        <div class="font-body max-w-400 text-lg mt-1 mx-auto"><strong>Dal ${formatDate(travel.startDate)} al ${formatDate(travel.endDate)}</strong></div>
                                     </div>
-                                    <div class="btn btn-banner mt-1 relative white-outline">INFO</div>
+                                    <h4 class="font-body max-w-400 text-lg mt-1 mx-auto price-text">${travel.price} €</h4>
+                                    <div class="btn btn-banner mt-1 primary-outline">INFO</div>
                                     <a href="/Guest/Details/${travel.id}" class="cursor-pointer" aria-label="Marocco, Tanzania, Sudafrica"></a>
                                 </div>
                     
