@@ -1,0 +1,46 @@
+@import '../Styles/general';
+@import '../Styles/vars';
+@import '../Styles/mixins';
+
+
+.herobanner-details{
+    height: 400px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .details-btn-back{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        
+        &.primary-outline {
+            background-color: transparent;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+
+            &:hover{
+                background-color: $primary-color;
+                border: 1px solid $primary-color;
+                color: white;
+            }
+        }
+    }
+    
+    .details-text-area{
+        position: absolute;
+        bottom: 15px;
+        
+    }
+    
+    .details-travel-price{
+        color:$primary-color;
+    }
+}
+
+.details-description-container {
+    width:70%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
