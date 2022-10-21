@@ -6,7 +6,7 @@ using webapp_travel_agency.Models;
 namespace webapp_travel_agency.Controllers;
 
 
-/*[Authorize]*/
+[Authorize]
 public class TravelPackageController : Controller
 {
     public IActionResult Index()

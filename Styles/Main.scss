@@ -1,20 +1,18 @@
-@import '../Styles/general';
 @import '../Styles/vars';
 @import '../Styles/mixins';
 
-main {
-    overflow-y: auto;
-}
+
 
 .wr-banner {
     min-height: 300px;
     max-width: 550px;
-    margin: 0;
     position: relative;
     overflow: hidden;
     outline: none !important;
-    padding:  0;
-    border: 1px solid #fff;
+    padding: 0;
+    margin: 5px;
+    border: 1px solid white;
+    border-radius: 15px;
     
     .wr-banner-image{
         

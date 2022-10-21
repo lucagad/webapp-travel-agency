@@ -4,14 +4,12 @@
 
 @{
     ViewData["Title"] = "Crea Viaggio | ";
+    Layout = "_Layout_Backend";
 }
 
 @model TravelPackage;
 
-@*$1$ CONTROLLO ACCESSO EFFETTUATO #1#
-@if (SignInManager.IsSignedIn(User))
-{*@
-    <div class="container">
+<div class="container">
     <div class="d-flex justify-content-center">
         <section class="col-md-10 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-start flex-wrap align-items-center pt-3 pb-2 mb-3">
@@ -107,10 +105,3 @@
         </section>
     </div>
 </div>
-
-@*}
-$1$ SE NEGATIVO MOSTRO ERRORE #1#
-else
-{
-    @Html.Partial("../Shared/Partials/_ErrorAuth")
-}*@

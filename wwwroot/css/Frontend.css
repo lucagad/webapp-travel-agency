@@ -3,4 +3,14 @@ body {
   font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: white;
   height: 100vh;
+  position: relative;
+}
+
+main {
+  overflow-y: scroll;
+  height: calc(100vh - 86px - 390px);
+}
+
+footer {
+  width: 100%;
 }

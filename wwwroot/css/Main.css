@@ -1,23 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
-body {
-  font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: white;
-  height: 100vh;
-}
-
-main {
-  overflow-y: auto;
-}
-
 .wr-banner {
   min-height: 300px;
   max-width: 550px;
-  margin: 0;
   position: relative;
   overflow: hidden;
   outline: none !important;
   padding: 0;
-  border: 1px solid #fff;
+  margin: 5px;
+  border: 1px solid white;
+  border-radius: 15px;
 }
 .wr-banner .wr-banner-image img {
   filter: blur(3px);

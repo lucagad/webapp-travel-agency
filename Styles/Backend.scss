@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import '../Styles/vars';
+
+body{
+  font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  background-color: $background-color-main;
+  height: 100vh;
+  position: relative;
+}
+
+main {
+  overflow-y: scroll;
+  height: calc(100vh - 86px - 81px);
+}
+
+footer{
+  /*position: absolute;*/
+  width: 100%;
+  height: 82px;
+  /*bottom: 0;*/
+}
+
+
 .table-img-custom{
   height: 50px;
   width: 50px;
@@ -7,8 +30,6 @@
   height: 150px;
   width: 150px;
 }
-
-
 
 .btn_custom_info,
 .btn_custom_edit,

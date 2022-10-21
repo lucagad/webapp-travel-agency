@@ -37,6 +37,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapRazorPages();
 
 //defaultValue();
 app.Run();
@@ -56,6 +57,7 @@ static void defaultValue()
             Price = 1499, 
             StartDate = DateTime.Today, 
             EndDate = DateTime.Today.AddDays(2)});
+        
         db.Add(new TravelPackage { 
             Title = "Vietnam: da Hanoi a Ho Chi Minh City", 
             Description = "Il Vietnam è il Paese giusto per immergersi nel cuore del Sud Est Asiatico: i paesaggi naturali sono incredibili, le città frenetiche come tutte le città asiatiche, le persone sorridenti ed accoglienti.", 
@@ -63,6 +65,7 @@ static void defaultValue()
             Price = 1299, 
             StartDate = DateTime.Today.AddDays(2), 
             EndDate = DateTime.Today.AddDays(7)});
+        
         db.Add(new TravelPackage { 
             Title = "Guadalupa beachlife: spiagge delle Antille Francesi e Mar dei Caraibi", 
             Description = "Guadalupa è un piccolo paradiso terrestre nel cuore dei Caraibi: un’isola a forma di farfalla che fa parte delle Piccole Antille francesi, che si affaccia sull’Oceano Atlantico e sul Mar dei Caraibi.", 
@@ -70,6 +73,14 @@ static void defaultValue()
             Price = 1499, 
             StartDate = DateTime.Today.AddDays(7), 
             EndDate = DateTime.Today.AddDays(21) });
+        
+        db.Add(new TravelPackage { 
+            Title = "Marocco Express: Marrakech, Essaouira e il deserto", 
+            Description = "Non è difficile capire perché in tanti vogliono imbarcarsi in un viaggio in Marocco: con un ricco patrimonio culturale, paesaggi sorprendentemente vari e una calorosa ospitalità, questo Paese è il posto perfetto per vivere una vera avventura", 
+            ImgUrl= "https://strapi-imaginary.weroad.it/resource/webp-small/27256/viaggio-marocco-sahara-deserto-tramonto-agosto-estate.webp", 
+            Price = 599, 
+            StartDate = DateTime.Today.AddDays(7), 
+            EndDate = DateTime.Today.AddDays(13) });
         
         db.SaveChanges();
             
