@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webapp_travel_agency;
 
@@ -11,9 +12,10 @@ using webapp_travel_agency;
 namespace webapp_travel_agency.Migrations
 {
     [DbContext(typeof(TravelContext))]
-    partial class TravelContextModelSnapshot : ModelSnapshot
+    [Migration("20221021141809_TravelMessage")]
+    partial class TravelMessage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

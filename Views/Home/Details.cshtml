@@ -13,17 +13,79 @@
 
 </section>
 
+<section class="container-fluid m-5">
+    <div class="row d-flex justify-content-center">
+        <h3 class="text-center text-uppercase">Richiedi maggiori Info</h3>
+
+        <div class="col-lg-8 col-lg-offset-2">
+
+            <form onsubmit="InviaMessaggio(event)">
+                <div class="messages"></div>
+                <div class="controls">
+
+                    <div class="row mt-1">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Nome *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Inserisci il tuo Nome *" required="required">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_surname">Cognome *</label>
+                                <input id="form_surname" type="text" name="surname" class="form-control" placeholder="Inserisci il tuo Cognome *" required="required">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-1">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_email">Email *</label>
+                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Inserisci la tua email *" required="required">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_phone">Telefono</label>
+                                <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Inserisci il tuo Telefono">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-1">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_message">Messaggio *</label>
+                                <textarea id="form_message" name="message" class="form-control" placeholder="Inserisci il tuo Messaggio*" rows="4" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mt-2">
+                            <input type="submit" class="btn btn-success btn-send" value="Invia">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
 
 <script type="text/javascript">
   
     searchTravel();
         
-     function searchTravel(){
+    function searchTravel(){
          let id = window.location.pathname.split('/')[3];
          getTravelById(id);
      }
         
-        function getTravelById(id){
+    function getTravelById(id){
             
         //axios.get('/api/TravelPackage/GetById/'+id).then( res => {
         axios.get('/api/TravelPackage/GetById/'+ id)
@@ -74,5 +136,33 @@
     function formatDate(dateString) {
       return new Date(dateString).toLocaleDateString();
     } 
+    
+    function InviaMessaggio(e){
+                   
+            e.preventDefault();
+            axios.post("/api/message/send",{
+                travelPackageId: window.location.pathname.split('/')[3],
+                email: document.querySelector('#form_email').value,
+                name: document.querySelector('#form_name').value,
+                surname: document.querySelector('#form_surname').value,
+                telephone: document.querySelector('#form_phone').value,
+                text: document.querySelector('#form_message').value,
+                
+            }).then(res=>{
+                document.querySelector('#form_email').value = '',
+                document.querySelector('#form_name').value = '',
+                document.querySelector('#form_surname').value = '',
+                document.querySelector('#form_phone').value = '',
+                document.querySelector('#form_message').value = '',
+    
+                alert('Messaggio inviato correttamente');
+            }).catch(err=>{
+                
+                console.log(err);
+                alert('Opps, dati non validi, riprova!');
+                
+            })
+            
+        }
     
 </script>

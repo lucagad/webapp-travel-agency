@@ -34,7 +34,8 @@ public class TravelPackage
     [CheckDateGreaterToday]
     public DateTime EndDate { get; set; }
     public int Destinations { get; set; }
-  
+    
+   
     public TravelPackage()
     {
         

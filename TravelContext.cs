@@ -9,6 +9,7 @@ public class TravelContext : IdentityDbContext<IdentityUser>
 {
     public DbSet<TravelPackage> Travels { get; set; }
  
+    public DbSet<Message> Messages { get; set; }
     
     public TravelContext()
     {
