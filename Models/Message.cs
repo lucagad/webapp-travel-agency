@@ -27,6 +27,7 @@ namespace webapp_travel_agency.Models;
         public int? TravelPackageId { get; set; }
         public TravelPackage? TravelPackage { get; set; }
 
+        public DateTime TimeStamp { get; set; }
         
         public Message()
         {

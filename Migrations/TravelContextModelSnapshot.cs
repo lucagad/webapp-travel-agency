@@ -252,6 +252,9 @@ namespace webapp_travel_agency.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("TimeStamp")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("TravelPackageId")
                         .HasColumnType("int");
 
